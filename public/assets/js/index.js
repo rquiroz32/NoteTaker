@@ -60,6 +60,8 @@ const handleNoteSave = function () {
     getAndRenderNotes();
     renderActiveNote();
   });
+//added to refresh page on save so you can see the note added to the list immediately. Also prevents users from clicking multiple times because they don't know their notes been added.
+  window.location.reload();
 };
 
 // Delete the clicked note
@@ -77,6 +79,8 @@ const handleNoteDelete = function (event) {
     getAndRenderNotes();
     renderActiveNote();
   });
+  //added to refresh page on delete button click (this removes the deleted item from view)
+  window.location.reload();
 };
 
 // Sets the activeNote and displays it
