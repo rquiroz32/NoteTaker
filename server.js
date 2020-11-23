@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 8080
 
 // URL handler to serve the notes.html page
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "public/notes.html"));
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 
@@ -28,7 +28,7 @@ app.get("/notes", function (req, res) {
 app.get("/api/notes", function (req, res) {
 
     //reads the db.json file and send it back as JSON
-    fs.readFile('db\\db.json', 'utf8', (error, data) => {
+    fs.readFile('./db/db.json', 'utf8', (error, data) => {
 
         if (error) throw (error)
 
@@ -42,7 +42,7 @@ app.get("/api/notes", function (req, res) {
 app.post('/api/notes', function (req, res) {
 
     //reads the file
-    fs.readFile('db\\db.json', 'utf8', (error, data) => {
+    fs.readFile('./db/db.json', 'utf8', (error, data) => {
         const note = req.body
         const _jsonArray = JSON.parse(data)
         note["id"] = _jsonArray.length + 1
@@ -55,7 +55,7 @@ app.post('/api/notes', function (req, res) {
         _jsonArray.push(note)
 
         //rewrite the file with the new note added to the old notes
-        fs.writeFile('db\\db.json', JSON.stringify(_jsonArray), (err) => {
+        fs.writeFile('./db/db.json', JSON.stringify(_jsonArray), (err) => {
             if (err) throw (err)
             console.log("successfully wrote to db.json file")
         });
@@ -73,7 +73,7 @@ app.delete('/api/notes/:id', function (req, res) {
     let jsonArray
 
     // Loop through the json and remove the note that matches the passed id.
-    fs.readFile('db\\db.json', 'utf8', (error, data) => {
+    fs.readFile('./db/db.json', 'utf8', (error, data) => {
 
         if (error) throw (error)
 
@@ -91,7 +91,7 @@ app.delete('/api/notes/:id', function (req, res) {
         }// closes for loop for filtering json
 
 
-        fs.writeFile('db\\db.json', JSON.stringify(filteredJson), (err) => {
+        fs.writeFile('./db/db.json', JSON.stringify(filteredJson), (err) => {
             if (err) throw (err)
             console.log("successfully wrote filtered JSON to db.json file")
         });
@@ -103,7 +103,7 @@ app.delete('/api/notes/:id', function (req, res) {
 
 // Unhandled requests get sent to the home page, putting this last because otherwise none of the other handlers will work (because of the wild card)
 app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "public/index.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 
