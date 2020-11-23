@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/rquiroz32/NoteTaker/issues"
   },
-  "homepage": "https://github.com/rquiroz32/NoteTaker#readme"
+  "homepage": "https://github.com/rquiroz32/NoteTaker#readme",
+  "devDependencies": {}
 }
