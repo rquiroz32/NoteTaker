@@ -7,12 +7,12 @@ https://cryptic-mountain-00796.herokuapp.com/
 
 ## Table of Contents
 
-*[Installation](#installation)
-*[Usage](#usage)
-*[Contributing](#Contributing)
-*[Testing](#Testing)
-*[Questions](#Questions)
-*[License](#License)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#Contributing)
+* [Testing](#Testing)
+* [Questions](#Questions)
+* [License](#License)
 
 
 ## Installation
